@@ -1,5 +1,5 @@
 import React from 'react';
-import 'D:/chefkart/react_project/chefkart_assignment/src/assets/styles.css';
+import '../assets/styles.css';
 import { Link } from 'react-router-dom';
 const DishDetails = ({ dishes, iconImage }) => {
   return (
@@ -8,6 +8,7 @@ const DishDetails = ({ dishes, iconImage }) => {
         <div className="container2">
           <p>Recommended</p>
         </div>
+        <div className='scroll'>
         <div className="container3">
           {dishes.map((dish) => (
             <div key={dish.id} className="dish-details">
@@ -28,7 +29,7 @@ const DishDetails = ({ dishes, iconImage }) => {
                       </div>
                     ))}
                   </div>
-                  {dish.equipments.join(', ')}
+                  {/* {dish.equipments.join(', ')} */}
                 </div>
                 <p className="description">{dish.description}</p>
                 <Link to="/dish-details">
@@ -38,6 +39,7 @@ const DishDetails = ({ dishes, iconImage }) => {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </>

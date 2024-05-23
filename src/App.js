@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import DishInfoComponent from './1.js';
-import iconImage from 'D:/chefkart/react_project/chefkart_assignment/src/assets/Group 508.png';
+
+import iconImage from './assets/Group 508.png';
 import Header from './components/Header';
 import FoodCategories from './components/foodcategories';
 import PopularDishes from './components/populardishes';
 import DishDetails from './components/dishdetails';
-import Footer from './components/footer';
+//import Footer from './components/footer';
 import DishDetailsPage from './components/DishDetailsPage';
 
 function App() {
@@ -26,14 +26,23 @@ function App() {
   return (
     <Router>
     <div>
-      <Header />
-      <FoodCategories />
-      <PopularDishes popularDishes={popularDishes} iconImage={iconImage} />
-      <Routes>
-        <Route path="/" element={<DishDetails dishes={dishes} iconImage={iconImage} />} />
-        <Route path="/dish-details" element={<DishDetailsPage />} /> {/* New route for DishDetailsPage */}
-      </Routes>
-      <Footer />
+
+     <Routes>
+  <Route
+    path="/"
+    element={
+      <>
+        <Header />
+        <FoodCategories />
+        <PopularDishes popularDishes={popularDishes} iconImage={iconImage} />
+        <DishDetails dishes={dishes} iconImage={iconImage} />
+      </>
+    }
+  />
+  <Route path="/dish-details" element={<DishDetailsPage />} />
+
+</Routes>
+
     </div>
   </Router>
   );

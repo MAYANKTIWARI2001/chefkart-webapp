@@ -1,5 +1,5 @@
 import React from 'react';
-import 'D:/chefkart/react_project/chefkart_assignment/src/assets/styles.css';
+import '../assets/styles.css';
 const FoodCategories = () => {
   return (
     <div className="container1">
